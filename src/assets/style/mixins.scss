@@ -1,0 +1,39 @@
+.paragraph-base {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+@mixin paragraph-base-light {
+  font-weight: 300;
+  @extend .paragraph-base;
+}
+
+@mixin paragraph-base-medium {
+  font-weight: 500;
+  @extend .paragraph-base;
+}
+
+.paragraph-base-small {
+  font-family: Inter;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+@mixin paragraph-small-light {
+  font-weight: 300;
+  @extend .paragraph-base-small;
+}
+
+@mixin paragraph-small-medium {
+  font-weight: 500;
+  @extend .paragraph-base-small;
+}
+
+@mixin paragraph-tiny {
+  font-family: Inter;
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 10px;
+}
