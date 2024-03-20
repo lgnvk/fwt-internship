@@ -37,3 +37,11 @@
   font-weight: 500;
   line-height: 10px;
 }
+
+@mixin button {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  text-transform: uppercase;
+}
