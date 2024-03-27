@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { Theme } from '@/theme'
-interface Props {
-  theme: Theme
-  disabled?: boolean
-}
-const props = defineProps<Props>()
+import type { PropsType } from './types'
+const props = defineProps<PropsType>()
 </script>
 <template>
   <button class="base-button" :class="[props.theme, { disabled: props.disabled }]">
@@ -25,7 +21,7 @@ const props = defineProps<Props>()
     &:not(.disabled) {
       &:hover,
       &:focus {
-        box-shadow: 0px 4px 10px 0px #ab895640;
+        box-shadow: 0 4px 10px 0 #ab895640;
       }
       &:focus {
         background-color: #ba9052;
@@ -37,7 +33,7 @@ const props = defineProps<Props>()
     &:not(.disabled) {
       &:hover,
       &:focus {
-        box-shadow: 0px 4px 10px 0px #00000040;
+        box-shadow: 0 4px 10px 0 #00000040;
       }
       &:focus {
         background-color: #232323;

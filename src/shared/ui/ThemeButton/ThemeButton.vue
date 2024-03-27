@@ -1,37 +1,35 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { Theme } from '@/theme'
+import type { PropsType } from './types'
 import DarkThemeIcon from '@/assets/icons/DarkThemeIcon.vue'
 import LightThemeIcon from '@/assets/icons/LigthThemeIcon.vue'
-import { Theme } from '@/theme'
-import { computed } from 'vue'
-export interface Props {
-  theme: Theme,
-  withText?: Boolean
-}
-const props = defineProps<Props>()
+
+const props = defineProps<PropsType>()
 
 const text = computed(() => {
-  return props.theme === Theme.dark ? 'Light Mode' : 'Dark Mode'
+  return props.theme === Theme.light ? 'Dark Mode' : 'Light Mode'
 })
 </script>
 <template>
-  <button class="theme-button" :class="props.theme">
-    <div class="theme-button__elipse">
-      <DarkThemeIcon v-if="props.theme === Theme.light"/>
-      <LightThemeIcon v-else/>
-    </div>
+  <div class="theme-button" :class="props.theme">
+    <button class="theme-button__circle">
+      <DarkThemeIcon v-if="props.theme === Theme.light" />
+      <LightThemeIcon v-else />
+    </button>
     <span v-if="props.withText">{{ text }}</span>
-  </button>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .theme-button {
   @include button;
   display: flex;
-  gap: 20px;
+  gap: 12px;
   align-items: center;
   text-decoration: underline;
   cursor: pointer;
-  &__elipse {
+  &__circle {
     width: 40px;
     height: 40px;
     display: flex;
@@ -41,7 +39,7 @@ const text = computed(() => {
   }
   &.dark {
     color: var(--primary-light-gray);
-    .theme-button__elipse {
+    .theme-button__circle {
       background-color: var(--secondary-black);
     }
     svg {
@@ -56,7 +54,7 @@ const text = computed(() => {
   }
   &.light {
     color: var(--primary-dark-gray);
-    .theme-button__elipse {
+    .theme-button__circle {
       background-color: var(--secondary-white);
     }
     svg {

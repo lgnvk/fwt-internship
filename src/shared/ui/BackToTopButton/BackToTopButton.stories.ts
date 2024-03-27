@@ -1,33 +1,32 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-
-import BaseButton from './BaseButton.vue'
+import BackToTopButton from './BackToTopButton.vue'
 import { Theme } from '@/theme'
 import type { PropsType } from './types'
 
 const meta = {
-  title: 'ui/buttons/BaseButton',
-  component: BaseButton
-} satisfies Meta<typeof BaseButton>
+  title: 'ui/buttons/BackToTopButton',
+  component: BackToTopButton
+} satisfies Meta<typeof BackToTopButton>
 
 export default meta
-type Story = StoryObj<typeof BaseButton>
+type Story = StoryObj<typeof BackToTopButton>
 
 const renderFunction = (args: PropsType) => ({
-  components: { BaseButton },
+  components: { BackToTopButton },
   setup() {
     return { args }
   },
-  template: '<BaseButton v-bind="args">Test</BaseButton>'
+  template: '<BackToTopButton v-bind="args"/>'
 })
 
-export const BaseButtonDark: Story = {
+export const BackToTopButtonDark: Story = {
   render: renderFunction,
   args: {
     theme: Theme.dark
   }
 }
 
-export const BaseButtonLigth: Story = {
+export const BackToTopButtonLight: Story = {
   render: renderFunction,
   args: {
     theme: Theme.light

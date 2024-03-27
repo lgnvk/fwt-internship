@@ -2,16 +2,17 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 
 import IconButton from './IconButton.vue'
 import { Theme } from '@/theme'
-import type { Props } from './types'
+import type { PropsType } from './types'
 
 const meta = {
+  title: 'ui/buttons/IconButton',
   component: IconButton
 } satisfies Meta<typeof IconButton>
 
 export default meta
 type Story = StoryObj<typeof IconButton>
 
-const renderFunction = (args: Props) => ({
+const renderFunction = (args: PropsType) => ({
   components: { IconButton },
   setup() {
     return { args }
@@ -30,7 +31,7 @@ export const IconButtonOverImageDark: Story = {
   render: renderFunction,
   args: {
     ...IconButtonDark.args,
-    overImage: true,
+    overImage: true
   }
 }
 
@@ -45,6 +46,6 @@ export const IconButtonOverImageLight: Story = {
   render: renderFunction,
   args: {
     ...IconButtonLight.args,
-    overImage: true,
+    overImage: true
   }
 }

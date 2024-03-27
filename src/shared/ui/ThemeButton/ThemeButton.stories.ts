@@ -2,16 +2,17 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 
 import ThemeButton from './ThemeButton.vue'
 import { Theme } from '@/theme'
-import type { Props } from './ThemeButton.vue'
+import type { PropsType } from './types'
 
 const meta = {
+  title: 'ui/buttons/ThemeButton',
   component: ThemeButton
 } satisfies Meta<typeof ThemeButton>
 
 export default meta
 type Story = StoryObj<typeof ThemeButton>
 
-const renderFunction = (args: Props) => ({
+const renderFunction = (args: PropsType) => ({
   components: { ThemeButton },
   setup() {
     return { args }
@@ -30,7 +31,7 @@ export const ThemeButtonDarkWithText: Story = {
   render: renderFunction,
   args: {
     ...ThemeButtonDark.args,
-    withText: true,
+    withText: true
   }
 }
 
@@ -45,6 +46,6 @@ export const ThemeButtonLightWithText: Story = {
   render: renderFunction,
   args: {
     ...ThemeButtonLight.args,
-    withText: true,
+    withText: true
   }
 }
